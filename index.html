@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>FCC: CSS Documentation</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<nav id="navbar">
+  <header> CSS Documentation </header>
+  <ul>
+    <a class="nav-link" href="#Introduction" rel="internal">
+      <li>Introduction</li>
+    </a>
+    <a class="nav-link" href="#Syntax" rel="internal">
+      <li>Syntax</li>
+    </a>
+    <a class="nav-link" href="#How_To" rel="internal">
+      <li>How To</li>
+    </a>
+
+    <a class="nav-link" href="#Borders" rel="internal">
+      <li>Borders</li>
+    </a>
+
+    <a class="nav-link" href="#Padding" rel="internal">
+      <li>Padding</li>
+    </a>
+    <a class="nav-link" href="#Height/Width" rel="internal">
+      <li>Height/Width</li>
+    </a>
+
+    <a class="nav-link" href="#Text" rel="internal">
+      <li>Text</li>
+    </a>
+    
+   <a class="nav-link" href="#Position" rel="internal">
+      <li>Position</li>
+    </a>  
+    
+
+    <a class="nav-link" href="#Overflow" rel="internal">
+      <li>Overflow</li>
+    </a>
+    
+    <a class="nav-link" href="#Inline_Block" rel="internal">
+      <li>Inline Block</li>
+    </a>
+    
+
+    <a class="nav-link" href="#Opacity" rel="internal">
+      <li>Opacity</li>
+    </a>
+    
+    <a class="nav-link" href="#Outline" rel="internal">
+      <li>Outline</li>
+    </a>
+  </ul>
+</nav>
+
+<main id="main-doc">
+  <section class="main-section" id="Introduction">
+    <header>Introduction</header>
+    <article>
+      <h1> What is CSS? </h1>
+
+      <p> CSS stands for Cascading Style Sheets </p>
+      <ul>
+        <li> CSS describes how HTML elements are to be displayed on screen, paper, or in other media. </li>
+        <li> CSS saves a lot of work. It can control the layout of multiple web pages all at once. </li>
+        <li> External stylesheets are stored in CSS files. </li>
+      </ul>
+        <h1> Why Use CSS? </h1>
+        <p> CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes. </p>
+        <h1> CSS Solved a Big Problem </h1>
+
+        <p> HTML was NEVER intended to contain tags for formatting a web page! HTML was created to describe the content of a web page, like: &lth1&gt This is a heading. &lt/h1&gt &ltp&gt This is a paragraph. &lt/p&gt </p>
+          <p>
+            When tags like &ltfont&gt, and color attributes were added to the HTML 3.2 specification, it started a nightmare for web developers. Development of large websites, where fonts and color information were added to every single page, became a long and expensive
+            process. To solve this problem, the World Wide Web Consortium (W3C) created CSS.
+          </p>
+          <p>
+            CSS removed the style formatting from the HTML page! </p>
+
+          <h1> CSS Saves a Lot of Work!
+          </h1>
+          <p>The style definitions are normally saved in external .css files. With an external stylesheet file, you can change the look of an entire website by changing just one file!
+          </p>
+    </article>
+  </section>
+  <section class="main-section" id="Syntax">
+    
+      <header>Syntax</header><article>
+      A CSS rule-set consists of a selector and a declaration block:
+      <img src="https://www.w3schools.com/css/selector.gif" alt="declaration block" />
+      <p> The selector points to the HTML element you want to style.
+        <br> The declaration block contains one or more declarations separated by semicolons.
+        <br> Each declaration includes a CSS property name and a value, separated by a colon.
+        <br> A CSS declaration always ends with a semicolon, and declaration blocks are surrounded by curly braces.
+      </p>
+      In the following example all &ltp&gt elements will be center-aligned, with a red text color:
+      <div id="example">
+        <h3> Example </h3>
+        <code> p {
+                  color: red;
+                  text-align: center;
+                 }
+            </code>
+      </div>
+      <h1> CSS Selectors </h1>
+      CSS selectors are used to "find" (or select) HTML elements based on their element name, id, class, attribute, and more.
+      <h1> The element Selector </h1>
+      <p> The element selector selects elements based on the element name.
+        <br> You can select all &ltp&gt elements on a page like this (in this case, all &ltp&gt elements will be center-aligned, with a red text color):</p>
+      <div id="example">
+        <code> p {
+                   text-align: center;
+                   color: red;
+                 } 
+              </code> </div>
+      <h1>The id Selector </h1>
+      <p> The id selector uses the id attribute of an HTML element to select a specific element.
+        <br> The id of an element should be unique within a page, so the id selector is used to select one unique element!
+        <br> To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+       </p>
+      The style rule below will be applied to the HTML element with id="para1":
+      <div id="example">
+        <h3> Example </h3>
+        <code> 
+              #para1 {
+                      text-align: center;
+                      color: red;
+                     }
+        </code> </div>
+      <div class="note"> <b> Note: </b> An id name cannot start with a number!</div>
+      <h1> The class Selector </h1>
+      <p> The class selector selects elements with a specific class attribute.
+      </p>
+      <p>
+        To select elements with a specific class, write a period (.) character, followed by the name of the class.
+      </p>
+      In the example below, all HTML elements with class="center" will be red and center-aligned:
+      <div id="example">
+        <h3> Example </h3>
+        <code> .center {
+                        text-align: center;
+                        color: red;
+                       }
+        </code>
+      </div>
+      <p> You can also specify that only specific HTML elements should be affected by a class.</p>
+      <p>
+        In the example below, only &ltp&gt elements with class="center" will be center-aligned:</p>
+      <div id="example">
+        <h2> Example </h2>
+        <code>  p.center {
+                          text-align: center;
+                          color: red;
+                         } 
+          </code> </div>
+    </article>
+  </section>
+  <section class="main-section" id="How_To">
+  
+      <header>How To</header>  <article>
+      When a browser reads a style sheet, it will format the HTML document according to the information in the style sheet.
+      <h1>
+        Three Ways to Insert CSS </h1>
+      <ul> There are three ways of inserting a style sheet:
+        <li>External style sheet </li>
+        <li> Internal style sheet </li>
+        <li> Inline style </li>
+      </ul>
+      <h1> External Style Sheet</h1>
+      With an external style sheet, you can change the look of an entire website by changing just one file! Each page must include a reference to the external style sheet file inside the &ltlink&gt element. The &ltlink&gt element goes inside the &lthead&gt
+      section:
+      <div id="example">
+        <h3> Example </h3>
+        <code> 
+ &lthead&gt
+        &ltlink rel="stylesheet" type="text/css" href="mystyle.css">
+&lt/head&gt
+        </code>
+      </div>
+      <p>
+        An external style sheet can be written in any text editor. The file should not contain any html tags. The style sheet file must be saved with a .css extension.
+        <br> Here is how the "mystyle.css" looks:</p>
+      <code> 
+        body {
+                   background-color: lightblue;
+                  }
+
+        h1 {
+             color: navy;
+             margin-left: 20px;
+            } </code>
+      <div class="rednote"> <b> 
+
+        Note: </b> Do not add a space between the property value and the unit (such as margin-left: 20 px;). The correct way is: margin-left: 20px; </div>
+      <h1> Internal Style Sheet </h1>
+
+      <p>
+        An internal style sheet may be used if one single page has a unique style.
+        <br> Internal styles are defined within the &ltstyle&gt element, inside the &lthead> section of an HTML page:
+      </p>
+      <div id="example">
+        <h3>Example </h3>
+        <code>  
+          &lthead&gt
+               &ltstyle&gt
+                  body {
+                        background-color: linen;
+                       }
+
+                  h1 {
+                      color: maroon;
+                      margin-left: 40px;
+                      }
+                    &lt/style&gt
+                    &lt/head&gt 
+    
+        </code> </div>
+      <h1>
+        Inline Styles </h1>
+      <p>
+        An inline style may be used to apply a unique style for a single element.
+    
+    </p>
+    
+      <p>
+        To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property.
+      </p>
+      The example below shows how to change the color and the left margin of a element:
+      <div id="example">
+        Example
+        <code>
+&lth1 style="color:blue;margin-left:30px;"> This is a heading &lt/h1>
+        </code>
+      </div>
+      <div class="yellownote">
+
+        <b> Tip: </b> An inline style loses many of the advantages of a style sheet (by mixing content with presentation). Use this method sparingly.
+      </div> 
+    </article> </section>
+      <section class="main-section" id="Borders">
+        
+          <header>Borders</header><article>
+          <h1> CSS Border Properties </h1>
+<p>
+          The CSS border properties allow you to specify the style, width, and color of an element's border.
+          </p>
+          <h1> Border Style </h1>
+          <p>
+            The border-style property specifies what kind of border to display.
+          </p>
+
+          The following values are allowed:
+          <ul>
+            <li> dotted - Defines a dotted border </li>
+            <li> dashed - Defines a dashed border </li>
+            <li>solid - Defines a solid border</li>
+            <li>double - Defines a double border</li>
+            <li>groove - Defines a 3D grooved border. The effect depends on the border-color value</li>
+            <li>ridge - Defines a 3D ridged border. The effect depends on the border-color value. </li>
+            <li>inset - Defines a 3D inset border. The effect depends on the border-color value</li>
+            <li>outset - Defines a 3D outset border. The effect depends on the border-color value</li>
+            <li>none - Defines no border
+            </li>
+            <li>hidden - Defines a hidden border</li>
+          </ul>
+          <p>
+            The border-style property can have from one to four values (for the top border, right border, bottom border, and the left border). </p>
+          <div id="example">
+            <h3> Example </h3><code>
+p.dotted {border-style: dotted;}<br>
+p.dashed {border-style: dashed;}<br>
+p.solid {border-style: solid;}<br>
+p.double {border-style: double;}<br>
+p.groove {border-style: groove;}<br>
+p.ridge {border-style: ridge;}<br>
+p.inset {border-style: inset;}<br>
+p.outset {border-style: outset;}<br>
+p.none {border-style: none;}<br>
+p.hidden {border-style: hidden;}<br>
+  p.mix {border-style: dotted dashed solid double;} </code> </div>
+        </article>
+      </section>
+      <section class="main-section" id="Padding">
+        <header>Padding</header> <article>
+        <p>
+          The CSS padding properties are used to generate space around an element's content, inside of any defined borders.
+        </p>
+        <p>
+          With CSS, you have full control over the padding. There are properties for setting the padding for each side of an element (top, right, bottom, and left). Padding - Individual Sides
+        </p>
+        <ul>
+          CSS has properties for specifying the padding for each side of an element:
+
+          <li>padding-top </li>
+          <li>padding-right </li>
+          <li>padding-bottom </li>
+          <li>padding-left </li>
+        </ul>
+        <ul>
+          All the padding properties can have the following values:
+
+          <li> length - specifies a padding in px, pt, cm, etc. </li>
+          <li> % - specifies a padding in % of the width of the containing element </li>
+          <li> inherit - specifies that the padding should be inherited from the parent element </li>
+        </ul>
+          <b>Note: </b> Negative values are not allowed.
+          <p>
+            The following example sets different padding for all four sides of a &ltdiv> element: </p>
+          <div id="example">
+            <h3>Example </h3><code>
+div {
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+       } </code> </div>
+
+    </article>
+  </section>
+  <section class="main-section" id="Height/Width"> 
+    <header>Height/Width</header><article>
+    <h1>
+
+      Setting height and width
+    </h1>
+    <p>
+      The height and width properties are used to set the height and width of an element.
+    </p>
+    <p>
+      The height and width can be set to auto (this is default. Means that the browser calculates the height and width), or be specified in length values, like px, cm, etc., or in percent (%) of the containing block. </p>
+    <div id="example">
+      <h3> Example</h3> <code>
+div {
+    height: 200px;
+    width: 50%;
+    background-color: powderblue;
+     } </code> </div>
+
+    <h1>Setting max-width </h1>
+    <p>
+      The max-width property is used to set the maximum width of an element.
+    </p>
+    <p>
+      The max-width can be specified in length values, like px, cm, etc., or in percent (%) of the containing block, or set to none (this is default. Means that there is no maximum width).
+    </p>
+    <p>
+      The problem with the &ltdiv> above occurs when the browser window is smaller than the width of the element (500px). The browser then adds a horizontal scrollbar to the page.
+    </p>
+    <p>
+      Using max-width instead, in this situation, will improve the browser's handling of small windows.
+    </p>
+    <p>
+      <b> Tip: </b> Drag the browser window to smaller than 500px wide, to see the difference between the two divs! This element has a height of 100 pixels and a max-width of 500 pixels.
+    </p>
+    <p>
+      <b> Note: </b> The value of the max-width property overrides width.
+      <br> The following example shows a &ltdiv> element with a height of 100 pixels and a max-width of 500 pixels:
+    </p>
+    <div id="example">
+      <h3>Example</h3> <code>
+div {
+    max-width: 500px;
+    height: 100px;
+    background-color: powderblue;
+  } </code> </div>
+    </article>
+  </section>
+
+  <section class="main-section" id="Text">
+    <header>Text</header><article>
+    <h1> Text Color
+    </h1>
+    <p>The color property is used to set the color of the text. The color is specified by:</p>
+    <ul>
+      <li>a color name - like "red"</li>
+      <li>a HEX value - like "#ff0000"</li>
+      <li>
+        an RGB value - like "rgb(255,0,0)"</li> </ul>
+      <p>
+        Look at CSS Color Values for a complete list of possible color values.
+      </p>
+      <p>
+        The default text color for a page is defined in the body selector. </p>
+      <div class="example">
+        <h3> Example </h3>
+        <code>body {
+    color: blue;
+}
+
+h1 {
+    color: green;
+  } </code> </div>
+      <h2>Text Alignment </h2>
+      <p>
+        The text-align property is used to set the horizontal alignment of a text.
+      </p>
+      <p>
+        A text can be left or right aligned, centered, or justified.
+        <br> The following example shows center aligned, and left and right aligned text (left alignment is default if text direction is left-to-right, and right alignment is default if text direction is right-to-left): </p>
+      <div class="example">
+        <h3> Example </h3> <code>
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: left;
+}
+
+h3 {
+    text-align: right;
+  } </code> </div>
+      <h1>
+        Text Decoration
+      </h1>
+      <p>
+        The text-decoration property is used to set or remove decorations from text.
+      </p>
+      The value text-decoration: none; is often used to remove underlines from links:
+      <div class="example">
+        <h3> Example </h3> <code>
+a {
+    text-decoration: none;
+  } </code> </div>
+
+      The other text-decoration values are used to decorate text:
+      <div class="example">
+        <h3> Example </h3> <code>
+h1 {
+    text-decoration: overline;
+}
+
+h2 {
+    text-decoration: line-through;
+}
+
+h3 {
+    text-decoration: underline;
+  } </code> </div>
+      </article>
+  </section>
+
+  <section class="main-section" id="Position">
+    <header>Position</header><article>
+    <p>
+      The position property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky). </p>
+    <p>
+
+      The position property specifies the type of positioning method used for an element.
+    </p>
+    <ul>
+      There are five different position values:
+
+      <li> static </li>
+      <li>relative </li>
+      <li>fixed</li>
+      <li>absolute</li>
+      <li>sticky</li></ul>
+      <p>
+        Elements are then positioned using the top, bottom, left, and right properties. However, these properties will not work unless the position property is set first. They also work differently depending on the position value. </p>
+      <h1> position: static; </h1>
+      <p>
+        HTML elements are positioned static by default.
+        <br> Static positioned elements are not affected by the top, bottom, left, and right properties.
+        <br> An element with position: static; is not positioned in any special way; it is always positioned according to the normal flow of the page: </p>
+      Here is the CSS that is used:
+      <div class="example">
+        <h3> Example </h3>
+        <code>
+div.static {
+    position: static;
+    border: 3px solid #73AD21;
+    } </code> </div>
+
+      <h1>position: relative;</h1>
+      <p>
+        An element with position: relative; is positioned relative to its normal position.
+        <br> Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+        <br> Here is the CSS that is used:</p>
+        <div class="example">
+          Example <code>
+div.relative {
+    position: relative;
+    left: 30px;
+    border: 3px solid #73AD21;
+    } </code>
+        </div>
+        <h1>
+          position: fixed;
+        </h1>
+        <p>
+          An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.
+          <br> A fixed element does not leave a gap in the page where it would normally have been located.
+          <br> Notice the fixed element in the lower-right corner of the page. Here is the CSS that is used: </p>
+
+        <div class="example">
+          <h3> Example </h3> <code>
+div.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    border: 3px solid #73AD21;
+    } </code> </div>
+
+        <h1> position: absolute; </h1>
+        <p>
+          An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+          <br> However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
+          <br>
+          <b>Note: </b> A "positioned" element is one whose position is anything except static. </p>
+
+          <div class="example">
+            <h3> Example </h3>
+            <code>div.relative {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 3px solid #73AD21;
+}
+
+div.absolute {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+  } </code>
+          </div>
+
+          <h1> position: sticky;</h1>
+          <p>
+            An element with position: sticky; is positioned based on the user's scroll position.
+            <br> A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).<br> In this example,
+            the sticky element sticks to the top of the page (top: 0), when you reach its scroll position. </p>
+            <div class="example">
+              <h3>
+                Example </h3> <code>
+div.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: green;
+    border: 2px solid #4CAF50;
+    } </code> </div>
+            </article>
+  </section>
+  <section class="main-section" id="Overflow">
+    
+      <header>Overflow</header><article>
+      <p>
+        The overflow property specifies whether to clip content or to add scrollbars when the content of an element is too big to fit in a specified area.
+      </p>
+      The overflow property has the following values:
+      <ul>
+        <li>visible - Default. The overflow is not clipped. It renders outside the element's box </li>
+        <li>hidden - The overflow is clipped, and the rest of the content will be invisible </li>
+        <li>scroll - The overflow is clipped, but a scrollbar is added to see the rest of the content </li>
+        <li>auto - If overflow is clipped, a scrollbar should be added to see the rest of the content </li>
+      </ul>
+    </article>
+  </section>
+  <section class="main-section" id="Inline_Block">
+    
+      <header>Inline Block</header><article>
+      <p>
+        Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element.
+        <br> Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
+        <br> Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
+        <br> The following example shows the different behavior of display: inline, display: inline-block and display: block:</p>
+      <div class="example">
+        <h3> Example </h3>
+        <code>span.a {
+    display: inline; /* the default for span */
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid blue;
+    background-color: yellow;
+}
+
+span.b {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid blue;
+    background-color: yellow;
+}
+
+span.c {
+    display: block;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid blue;
+    background-color: yellow;
+  } </code> </div>
+    </article>
+  </section>
+
+  <section class="main-section" id="Opacity">
+    
+      <header>Opacity</header><article>
+      <p>
+        The opacity property specifies the opacity/transparency of an element.</p>
+        <div class="example">
+          <h3>Example </h3><code>
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+        } </code> </div>
+    </article>
+  </section>
+  <section class="main-section" id="Outline">
+   
+      <header>Outline</header> <article>
+      <p>
+        An outline is a line that is drawn around elements, OUTSIDE the borders, to make the element "stand out". </p>
+      <ul>
+        CSS has the following outline properties:
+
+        <li> outline-style </li>
+        <li>outline-color </li>
+        <li>outline-width </li>
+        <li>outline-offset outline </li></ul>
+    </article>
+  </section>
+</main>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
